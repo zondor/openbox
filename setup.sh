@@ -34,13 +34,14 @@ show_head "Installing extra packages"
 if [ -d ~/.config ]; then
 	sudo cp $OPENBOX/templates/slim /etc/slim.conf
 	cp $OPENBOX/templates/tint2/tint2rc  ~/.config/tint2/
-	cp $OPENBOX/templates/openbox/autostart ~/.config/openbox/
+	cp $OPENBOX/templates/openbox/autostart ~/.config/openbox/autostart.sh
 	cp $OPENBOX/templates/openbox/rc.xml ~/.config/openbox/
-	cp $OPENBOX/templates/openbox/.conkyrc cp ~/
+	cp $OPENBOX/templates/openbox/.conkyrc ~/
 
 	sudo cp -Rf $OPENBOX/templates/openbox/bin/*  /usr/bin/
 	tar -xvf  $OPENBOX/files/waldorf.tar.gz
-	sudo cp -R $OPENBOX/waldorf/* /usr/share/themes/
+	sudo cp -R $OPENBOX/waldorf/* ~/.themes/
+	rm -R $OPENBOX/waldorf
 fi
  
 
