@@ -6,7 +6,11 @@ if [ ! -d ~/.openbox-inst ]; then
 	  echo "git not installed"
 	  exit
 	}
+else
+  	cd ~/.openbox-inst
+  	git pull origin master
 fi
+
 bash ~/.openbox-inst/setup.sh
 
 
