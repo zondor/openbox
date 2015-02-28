@@ -11,6 +11,6 @@ else
   	git pull origin master
 fi
 
-bash ~/.openbox-inst/setup.sh
+sh ~/.openbox-inst/setup.sh
 
 
