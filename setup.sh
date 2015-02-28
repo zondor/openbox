@@ -40,7 +40,7 @@ if [ -d ~/.config ]; then
 
 	sudo cp -Rf $OPENBOX/templates/openbox/bin/*  /usr/bin/
 	tar -xvf  $OPENBOX/files/waldorf.tar.gz
-	sudo cp -Rv $OPENBOX/waldorf/* /usr/share/themes/
+	sudo cp -R $OPENBOX/waldorf/* /usr/share/themes/
 fi
  
 
