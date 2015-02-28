@@ -36,11 +36,11 @@ if [ -d ~/.config ]; then
 	cp $OPENBOX/templates/tint2/tint2rc  ~/.config/tint2/
 	cp $OPENBOX/templates/openbox/autostart ~/.config/openbox/
 	cp $OPENBOX/templates/openbox/rc.xml ~/.config/openbox/
-	cp $OPENBOX/templates/openbox/.conkyrc cp ~/
-
+	cp $OPENBOX/templates/openbox/.conkyrc cp ~
+/
 	sudo cp -Rf $OPENBOX/templates/openbox/bin/*  /usr/bin/
 	tar -xvf  $OPENBOX/files/waldorf.tar.gz
-	cp -Rv $OPENBOX/files/waldorf/* /usr/share/themes/
+	cp -Rv $OPENBOX/waldorf/* /usr/share/themes/
 fi
  
 
