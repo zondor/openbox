@@ -4,6 +4,10 @@ if [ ! -n "$OPENBOX" ]; then
 	OPENBOX=~/.openbox-inst
 fi
 
+VIRTBOX=`dmesg | grep -w "BIOS VirtualBox"`
+VIRTRES=$?
+
+
 show_error() {
 	echo -e "\033[41m"╬►"\033[41m" Error : $1 "\033[0m"
 }
@@ -17,8 +21,12 @@ show_succes() {
 }
 
 show_head "Installing extra packages"
+if [ $VIRTRES != 0 ]; then
+	show_succes "VirtualBox detected, installing extrapackages for it"
 	sudo apt-get install virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11 
-	sudo apt-get install slim xorg openbox obmenu obconf tint2 xfce4-power-manager xfce4-terminal gmrun thunar thunar-dbg thunar-vcs-plugin thunar-volman thunar-archive-plugin thunar-data xfce4-settings gnome-icon-theme-full lxappearance volti gksu nitrogen clipit terminator zsh xscreensaver leafpad conky -y
+fi
+
+sudo apt-get install slim xorg openbox obmenu obconf tint2 xfce4-power-manager xfce4-terminal gmrun thunar thunar-dbg thunar-vcs-plugin thunar-volman thunar-archive-plugin thunar-data xfce4-settings gnome-icon-theme-full lxappearance volti gksu nitrogen clipit terminator zsh xscreensaver leafpad conky -y
 show_succes "packages = ok"
 
 
